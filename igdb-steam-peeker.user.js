@@ -4,6 +4,8 @@
 // @version      1.0
 // @description  Finds Release Dates and OS support (Y/N) from Steam
 // @author       NinaM33p
+// @license      MIT
+// @supportURL   https://github.com/NinaM33p/IGDB-Steam-Release-Date-Preview/issues
 // @match        https://www.igdb.com/games/*/edit*
 // @match        https://www.igdb.com/games/*/changes*
 // @grant        GM_xmlhttpRequest

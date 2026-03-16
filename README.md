@@ -1,4 +1,5 @@
 # IGDB Steam Data Peeker (Platform Y/N)
+![Preview](Preview.png)
 
 A lightweight Tampermonkey script designed for IGDB contributors. It automatically "peeks" at Steam store pages to retrieve release dates and platform compatibility, displaying them in a convenient floating box on the IGDB edit page.
 

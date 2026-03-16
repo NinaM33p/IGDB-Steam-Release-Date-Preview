@@ -7,7 +7,7 @@ A lightweight Tampermonkey script designed for IGDB contributors. It automatical
 - **Automatic Scanning:** Detects Steam URLs in the IGDB external links field.
 - **Release Dates:** Quickly view and copy the **1.0 Release** and **Early Access** dates.
 - **Platform Audit:** Instantly check for **PC**, **Mac**, and **Linux** support with simple **[Y/N]** indicators.
-- **Clean UI:** A non-intrusive floating box that stays out of the way while you work.
+- **Clean UI:** A non-intrusive static overlay floating box that stays out of the way while you work.
 
 ## 🛠 Installation
 

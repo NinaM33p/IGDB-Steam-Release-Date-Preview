@@ -1,15 +1,14 @@
 // ==UserScript==
 // @name         IGDB Steam Data Peeker (Platform Y/N)
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Finds Release Dates and OS support (Y/N) from Steam
 // @author       NinaM33p
-// @license      MIT
-// @supportURL   https://github.com/NinaM33p/IGDB-Steam-Release-Date-Preview/issues
 // @match        https://www.igdb.com/games/*/edit*
 // @match        https://www.igdb.com/games/*/changes*
 // @grant        GM_xmlhttpRequest
 // @connect      store.steampowered.com
+// @license      MIT
 // ==/UserScript==
 
 (function() {
@@ -39,10 +38,16 @@
                 eaDate = eaLabel.nextSibling?.textContent.trim().replace(':', '') || "N/A";
             }
 
-            // 2. Check Platforms (Y/N Logic)
-            const hasWin = doc.querySelector('.platform_img.win') ? 'Y' : 'N';
-            const hasMac = doc.querySelector('.platform_img.mac') ? 'Y' : 'N';
-            const hasLinux = doc.querySelector('.platform_img.linux') ? 'Y' : 'N';
+          // 2. Check Platforms (Improved Y/N Logic)
+            // Checks for icons OR if the System Requirements tabs exist for that OS
+            const hasWin = (doc.querySelector('.platform_img.win') ||
+                            doc.querySelector('.sysreq_tab[data-os="win"]')) ? 'Y' : 'N';
+
+            const hasMac = (doc.querySelector('.platform_img.mac') ||
+                            doc.querySelector('.sysreq_tab[data-os="mac"]')) ? 'Y' : 'N';
+
+            const hasLinux = (doc.querySelector('.platform_img.linux') ||
+                              doc.querySelector('.sysreq_tab[data-os="linux"]')) ? 'Y' : 'N';
 
             infoBox.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
